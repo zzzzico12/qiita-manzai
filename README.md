@@ -1,4 +1,27 @@
-# Usage Instructions
+# Manzai Script Generator
 
-1. Run the manzai script generator: `python manzai.py`
-2. Run the audio generator: `python generate.py`
+AIエージェントを使用して漫才の台本を自動生成し、AWS Pollyで音声合成するプロジェクトです。
+
+## 概要
+
+このプロジェクトは、複数のClaudeエージェントが協働して漫才を���成します。ボケとツッコミのエージェントが交互にやり取りをして、テンポよく笑える漫才を作成します。生成された台本はAWS Pollyで日本語音声に変換され、MP3ファイルとして出力されます。
+
+## エージェントの構成
+
+- **ボケエージェント**: Claude Sonnetを使用。関西弁でテンポよくボケます
+- **ツッコミエージェント**: Claude Haikuを使用。関西弁でテンポよくツッコみます
+- **監督エージェント（オーケストレーター）**: 2つのエージェントを統合管理し、5ターンの漫才を生成します
+
+## 使用方法
+
+```bash
+python manzai.py
+python generate.py
+```
+
+## 技術スタック
+
+- **言語**: Python
+- **AI**: Claude (Anthropic Bedrock)
+- **音声合成**: AWS Polly
+- **音声処理**: pydub
